@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
-import { MdHome } from "react-icons/md";
 import { FaBlog, FaUser } from "react-icons/fa";
 
 export default function Navbar() {
