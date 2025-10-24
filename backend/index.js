@@ -4,12 +4,20 @@ import DBCon from './utils/db.js'
 import AuthRouter from './routes/Auth.js'
 import cookieParser from 'cookie-parser'
 import BlogsRoute from './routes/Blogs.js'
+import cors from "cors";
+
 dotenv.config()
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
 DBCon()
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true, // if using cookies or auth headers
+  })
+);
 app.use(express.static('public'))
 app.use(cookieParser())
 app.use(express.json()); // ✅ Required to parse JSON request bodies
