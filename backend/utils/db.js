@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const DBCon = async()=>{
     try{
-        mongoose.connect('mongodb+srv://amalrj:amalrj@cluster0.j2bjy8p.mongodb.net/')
+        mongoose.connect(process.env.MONGO_DB)
         console.log('mongoDB is connected ')
     }
     catch{
